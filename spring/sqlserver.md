@@ -17,3 +17,29 @@ public void someTransactionalMethod(User user) {
 
 }
 ```
+
+connectionPropertiesは、こんなかんじ
+```xml
+<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+    	<property name="driverClassName" value=""/>
+        <property name="url" value=""/>
+        <property name="username" value=""/>
+        <property name="password" value=""/>
+        <property name="maxActive" value=""/>
+        <property name="maxWait" value=""/>
+        <property name="maxIdle" value=""/>
+        <property name="minIdle" value=""/>
+        <property name="initialSize" value=""/>
+        <property name="validationQuery" value=""/>
+        <property name="testOnBorrow" value=""/>
+        <property name="testOnReturn" value=""/>        
+        <property name="testWhileIdle" value=""/>        
+        <property name="timeBetweenEvictionRunsMillis" value=""/>        
+        <property name="numTestsPerEvictionRun" value=""/>        
+        <property name="connectionProperties">
+        	<props>
+        		<prop key="SnapshotSerializable">true</prop>
+        	</props>
+        </property>
+    </bean>
+```
